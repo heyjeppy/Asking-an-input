@@ -1,0 +1,64 @@
+using System;
+
+namespace practice2
+{
+    class Program
+    {
+        //Asking inputs from the user
+        public static int x;
+        public static int age;
+        static void Main(string[] args)
+        {
+
+            string name = Message("name");
+            string MyAge = Message("age");
+            x = Convert.ToInt32(MyAge);
+            
+            DisplayOutput(name, x);
+        }
+
+        public static string Message(string msg)
+        {
+            Console.WriteLine("Please enter your {0}: ", msg);
+            return Console.ReadLine();
+        }
+
+        public static int Edad(int y)
+        {
+            
+            if (x >= 18 || x <= 120)
+            {
+                Console.WriteLine("You're an adult!");
+            }
+            else if (x <= 17 || x > 0)
+            {
+                Console.WriteLine("You are a minor!");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+            
+            return x;
+        }
+
+        public static int Year(int z)
+        {
+            x = 2019 - age;
+            Console.WriteLine("Probably you were born on " + x);
+            return x;
+        }
+
+        public static void DisplayOutput(string name, int x)
+        {
+            Console.WriteLine("><><><><><><><PROFILE><><><><><><><><");
+            Console.WriteLine("Your name is " + name);
+            Console.WriteLine("Your age is " + x);
+            age = Edad(x);
+            int year = Year(x);
+            Console.WriteLine("><><><><><><><><><><><><><><><><><><>");
+            
+        }
+        
+    }
+}
